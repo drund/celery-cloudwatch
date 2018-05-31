@@ -239,7 +239,8 @@ def main():
 
     # set up the celery application
     app = Celery(broker=broker_url)
-    LOGGER.info('Connected to broker at %s', broker_url)
+    # Drund mod: don't log broker_url
+    # LOGGER.info('Connected to broker at %s', broker_url)
 
     # acquire the AWS configuration, if AWS_CLOUDWATCH_ACCESS_KEY
     # and/or AWS_CLOUDWATCH_SECRET_KEY are not set, Boto should
